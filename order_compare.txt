@@ -1,0 +1,23 @@
+We conduct a series of 
+
+% 生成数据集
+We generate a series of datasets whose cardinality are fixed at 200,000 and the dimensionalities vary in {2,4,8,12,16}. For each dataset, the coordinates are randomly generated following a uniform distribution with the range of [0,1000].
+
+% 数据集中放入线序
+For a certain dataset, we first partition the whole space into equal-sized grids of width $W$. The a certain kind of space-filling curve is conducted on the space. In this way, each of the data points can get a order number alongside the curve according to the grid it locates in. We then specify a query point $q$ and a search range $R$, we see how many true nearest neighbors can be found within $R$ steps away from the query's order alongside the curve. 
+
+% 参数设置
+On each of the dataset, we vary the grid width $W$ in the set of {4,8,16,32,64,128,256}. We set the range $R=W/2$. We see how many 100-NNs can be found. 
+
+% gorder与rowwise的比较
+Fig. depicts the comparison between the row-wise curve and the Gray curve.
+
+
+For example, in fig. (a), we conduct the row-wise order on a 2-dimensional datasets. A query $O$ is specified, and we can see its order number is 12. $A,B,C,D$ is $O$'s true 4-NNs. If we a allowed to check 4 steps away from $O$, we can get two true NNs, $B,D$ since they are $8,1,8,1$ steps away from $O$. Therefore the recall is 2/4=50\%.
+
+For g-order, with the same range, the recall is 3/4\%.
+
+To see the true ability, we conduct the performance test on the syn... datasets.
+We set the 
+
+ 
